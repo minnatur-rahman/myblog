@@ -1,0 +1,1 @@
+<h1>Add category page</h1>
