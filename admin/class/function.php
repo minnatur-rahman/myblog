@@ -1,6 +1,6 @@
 <?php
 
-class myadminblog
+class myAdminBlog
 {
 
 
@@ -19,5 +19,9 @@ class myadminblog
           if (!$this->conn) {
                die("Database Connection Error !!");
           }
+     }
+
+     public function admin_login($data)
+     {
      }
 }
