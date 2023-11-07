@@ -3,6 +3,10 @@ include("class/function.php");
 
 $obj = new myAdminBlog();
 
+if (isset($_POST['admin_login'])) {
+    $obj->admin_login($_POST);
+}
+
 ?>
 
 <?php include_once('includes/head.php') ?>
@@ -28,15 +32,10 @@ $obj = new myAdminBlog();
                                             <label class="small mb-1" for="inputPassword">Password</label>
                                             <input name="admin_pass" class="form-control py-4" id="inputPassword" type="password" placeholder="Enter password" />
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" />
-                                                <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Forgot Password?</a>
-                                            <a class="btn btn-primary" name="" href="index.html">Login</a>
+
+                                            <input type="submit" value="Login" name="admin_login" class="btn btn-primary">
                                         </div>
                                     </form>
                                 </div>
