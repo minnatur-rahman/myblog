@@ -47,4 +47,16 @@ class myAdminBlog
           unset($_SESSION['admin_name']);
           header('location:index.php');
      }
+
+     public function add_category($data)
+     {
+          $cat_name = $data['cat_name'];
+          $cat_des = $data['cat_des'];
+
+          $query = "INSERT INTO category(cat_name,cat_des) VALUE ('$cat_name','$cat_des')";
+
+          if (mysqli_query($this->conn, $query)) {
+               return "Category Add Successfully !";
+          }
+     }
 }
