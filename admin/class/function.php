@@ -40,4 +40,11 @@ class myAdminBlog
                }
           }
      }
+
+     public function adminLogout()
+     {
+          unset($_SESSION['adminID']);
+          unset($_SESSION['admin_name']);
+          header('location:index.php');
+     }
 }
