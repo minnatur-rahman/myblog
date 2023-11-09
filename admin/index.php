@@ -6,6 +6,13 @@ $obj = new myAdminBlog();
 if (isset($_POST['admin_login'])) {
     $obj->admin_login($_POST);
 }
+session_start();
+if (isset($_SESSION['adminID'])) {
+    $id = $_SESSION['adminID'];
+}
+if (isset($id)) {
+    header("location: dashboard.php");
+}
 
 ?>
 

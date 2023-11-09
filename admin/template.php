@@ -3,7 +3,7 @@ include('class/function.php');
 session_start();
 $id = $_SESSION['adminID'];
 if ($id == null) {
-    header("location:index.php");
+    header("location: index.php");
 }
 
 ?>
