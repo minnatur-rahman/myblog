@@ -1,3 +1,10 @@
+<?php
+$catData = $obj->display_category();
+
+?>
+
+
+
 <h1>Manage category page</h1>
 <table class="table">
     <thead>
@@ -9,14 +16,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>some</td>
-            <td>Her name is shabina</td>
-            <td>
-                <a class="btn btn-warning" href="">Edit</a>
-                <a class="btn btn-danger" href="">Delete</a>
-            </td>
-        </tr>
+        <?php while ($cat = mysqli_fetch_assoc($catData)) { ?>
+            <tr>
+                <td><?php echo $cat['cat_id']; ?></td>
+                <td><?php echo $cat['cat_name']; ?></td>
+                <td><?php echo $cat['cat_des']; ?></td>
+                <td>
+                    <a class="btn btn-warning" href="add_cat_view.php?status=edit&&id=<?php echo $cat['cat_id']; ?>">Edit</a>
+                    <a class="btn btn-danger" href="">Delete</a>
+                </td>
+            </tr>
+        <?php } ?>
     </tbody>
 </table>

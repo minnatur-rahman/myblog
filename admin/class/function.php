@@ -59,4 +59,12 @@ class myAdminBlog
                return "Category Add Successfully !";
           }
      }
+     public function display_category()
+     {
+          $query = "SELECT * FROM category";
+          if (mysqli_query($this->conn, $query)) {
+               $category = mysqli_query($this->conn, $query);
+               return $category;
+          }
+     }
 }
