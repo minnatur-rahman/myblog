@@ -67,4 +67,14 @@ class myAdminBlog
                return $category;
           }
      }
+
+     public function display_category_by_id($id)
+     {
+          $query = "SELECT * FROM category WHERE cat_id='$id'";
+          if (mysqli_query($this->conn, $query)) {
+               $categoryId = mysqli_query($this->conn, $query);
+               $categoryData = mysqli_fetch_assoc($categoryId);
+               return $categoryData;
+          }
+     }
 }
