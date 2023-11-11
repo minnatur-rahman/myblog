@@ -77,4 +77,10 @@ class myAdminBlog
                return $categoryData;
           }
      }
+
+     public function update_data($data)
+     {
+          $u_cat_name = $data['u_cat_name'];
+          $u_cat_des = $data['u_cat_des'];
+     }
 }

@@ -10,6 +10,8 @@ if (isset($_GET['status'])) {
     }
 }
 
+if (isset($_POST['add_cat_btn']))
+    $obj->update_data($_POST);
 
 ?>
 
@@ -26,5 +28,6 @@ if (isset($_GET['status'])) {
         <input class="form-control" type="text" value="<?php echo $addCat['cat_des'] ?>" name="u_cat_des" id="cad_des">
     </div>
 
+    <input type="hidden" name="cat_id" value="<?php echo $addCat['cat_id'] ?>">
     <input class="btn btn-danger form-control" type="submit" name="add_cat_btn" value="Update Category">
 </form>
