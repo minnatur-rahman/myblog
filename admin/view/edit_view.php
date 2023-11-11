@@ -11,13 +11,15 @@ if (isset($_GET['status'])) {
 }
 
 if (isset($_POST['add_cat_btn']))
-    $obj->update_data($_POST);
+    $cat_mag = $obj->update_category($_POST);
 
 ?>
 
 <h1>Add category page</h1>
-
-<form class="form" action="" method="post">
+<?php if (isset($cat_mag)) {
+    echo $cat_mag;
+} ?>
+<form class="form" method="post">
     <div class=" mb-3 form-group">
         <label for="cadName">Category Name</label>
         <input class="form-control" type="text" value="<?php echo $addCat['cat_name'] ?>" name="u_cat_name" id="cadName">

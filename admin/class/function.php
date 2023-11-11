@@ -78,9 +78,16 @@ class myAdminBlog
           }
      }
 
-     public function update_data($data)
+     public function update_category($data)
      {
           $u_cat_name = $data['u_cat_name'];
           $u_cat_des = $data['u_cat_des'];
+          $cat_id_no = $data['cat_id'];
+
+          $query = "UPDATE category SET cat_name='$u_cat_name', 	cat_des='$u_cat_des' WHERE cat_id=$cat_id_no";
+
+          if (mysqli_query($this->conn, $query)) {
+               return "Information add successfully !";
+          }
      }
 }

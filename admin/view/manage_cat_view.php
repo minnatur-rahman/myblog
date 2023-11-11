@@ -23,7 +23,7 @@ $catData = $obj->display_category();
                 <td><?php echo $cat['cat_des']; ?></td>
                 <td>
                     <a class="btn btn-warning" href="edit.php?status=edit&&id=<?php echo $cat['cat_id']; ?>">Edit</a>
-                    <a class="btn btn-danger" href="">Delete</a>
+                    <a class="btn btn-danger" href="?status=delete&&id=<?php echo $cat['cat_id']; ?>">Delete</a>
                 </td>
             </tr>
         <?php } ?>
