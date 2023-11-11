@@ -90,4 +90,13 @@ class myAdminBlog
                return "Information add successfully !";
           }
      }
+
+     public function delete_category($id)
+     {
+          $query = "DELETE FROM category WHERE cat_id=$id";
+
+          if (mysqli_query($this->conn, $query)) {
+               return "Category Deleted Successfully !";
+          }
+     }
 }

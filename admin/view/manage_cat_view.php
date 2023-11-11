@@ -1,11 +1,22 @@
 <?php
 $catData = $obj->display_category();
 
+if (isset($_GET['status'])) {
+    if ($_GET['status'] == 'delete') {
+        $dele = $_GET['id'];
+
+        $cat_deleted = $obj->delete_category($dele);
+    }
+}
+
 ?>
 
 
 
 <h1>Manage category page</h1>
+<?php if (isset($cat_deleted)) {
+    echo $cat_deleted;
+} ?>
 <table class="table">
     <thead>
         <tr>
