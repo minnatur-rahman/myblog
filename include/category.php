@@ -4,8 +4,13 @@
             <h2>Categories</h2>
         </div>
         <div class="content">
-            <ul>
-                <li><a href="#">- Nature Lifestyle</a></li>
+            <ul class="">
+                <?php while ($category = mysqli_fetch_assoc($getCat)) {  ?>
+                    <li>
+                        <a href="#"><?php echo $category['cat_name']; ?></a>
+
+                    </li>
+                <?php } ?>
                 <li><a href="#">- Awesome Layouts</a></li>
                 <li><a href="#">- Creative Ideas</a></li>
                 <li><a href="#">- Responsive Templates</a></li>
