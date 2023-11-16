@@ -87,7 +87,7 @@ class myAdminBlog
           $query = "UPDATE category SET cat_name='$u_cat_name', 	cat_des='$u_cat_des' WHERE cat_id=$cat_id_no";
 
           if (mysqli_query($this->conn, $query)) {
-               return "Information add successfully !";
+               return "Category Update Successfully !";
           }
      }
 

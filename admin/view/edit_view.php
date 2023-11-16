@@ -15,7 +15,7 @@ if (isset($_POST['add_cat_btn']))
 
 ?>
 
-<h1>Add category page</h1>
+<h1>Update category page</h1>
 <?php if (isset($cat_mag)) {
     echo $cat_mag;
 } ?>
