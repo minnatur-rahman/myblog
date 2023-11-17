@@ -37,7 +37,7 @@ $posts = $obj->display_post();
                             echo "Unpublished";
                         } ?></td>
                     <td>
-                        <a class="btn btn-danger" href="#">Edit</a>
+                        <a class="btn btn-danger" href="edit_post.php?status=editpost&&id=<?php echo $postData['post_id']; ?>">Edit</a>
                         <a class="btn btn-warning" href="#">Delete</a>
                     </td>
                 </tr>

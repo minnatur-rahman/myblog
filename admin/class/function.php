@@ -147,4 +147,14 @@ class myAdminBlog
                return "Image Updated Successfully!";
           }
      }
+     public function get_post_info($id)
+     {
+          $query = "SELECT * FROM post_with_ctg WHERE post_id=$id";
+
+          if (mysqli_query($this->conn, $query)) {
+               $post_info = mysqli_query($this->conn, $query);
+               $post = mysqli_fetch_assoc($post_info);
+               return $post;
+          }
+     }
 }
