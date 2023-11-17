@@ -126,4 +126,12 @@ class myAdminBlog
                return $posts;
           }
      }
+     public function display_post_public()
+     {
+          $query = "SELECT * FROM post_with_ctg WHERE post_status=1";
+          if (mysqli_query($this->conn, $query)) {
+               $posts = mysqli_query($this->conn, $query);
+               return $posts;
+          }
+     }
 }
