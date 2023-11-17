@@ -25,11 +25,15 @@ $posts = $obj->display_post();
                     <td><?php echo $postData['post_id']; ?></td>
                     <td><?php echo $postData['post_title']; ?></td>
                     <td><?php echo $postData['post_content']; ?></td>
-                    <td><img height="100" src="../upload/<?php echo $postData['post_img']; ?>" alt=""></td>
+                    <td><img height="100" src="../upload/<?php echo $postData['post_img']; ?>"></td>
                     <td><?php echo $postData['post_author']; ?></td>
                     <td><?php echo $postData['post_date']; ?></td>
                     <td><?php echo $postData['cat_name']; ?></td>
-                    <td><?php echo $postData['post_status']; ?></td>
+                    <td><?php if ($postData['post_status'] == 1) {
+                            echo "published";;
+                        } else {
+                            echo "Unpublished";
+                        } ?></td>
                     <td>
                         <a class="btn btn-danger" href="#">Edit</a>
                         <a class="btn btn-warning" href="#">Delete</a>
