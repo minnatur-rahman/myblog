@@ -1,8 +1,8 @@
 <?php
 $categoryName = $obj->display_category();
 
-if (isset($_post['add_post'])) {
-    $msg = $obj->add_post($_post);
+if (isset($_POST['add_post'])) {
+    $msg = $obj->add_post($_POST);
 }
 ?>
 
@@ -12,7 +12,7 @@ if (isset($_post['add_post'])) {
     echo $msg;
 } ?>
 
-<form class="table table-responsive" action="" method="post" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data">
     <div class=" mb-5 form-group">
         <label for="post_title">Post Title</label>
         <input class="form-control" type="text" name="post_title" id="post_title">
@@ -27,8 +27,8 @@ if (isset($_post['add_post'])) {
         <input class="mt-3" type="file" name="post_img" id="post_img">
     </div>
     <div class="mb-5 form-group">
-        <label for="post_cat">Select Post Category</label>
-        <select class="form-control" name="post_ctg" id="post_cat">
+        <label for="post_category">Select Post Category</label>
+        <select class="form-control" name="post_category" id="post_category">
             <?php while ($category = mysqli_fetch_assoc($categoryName)) { ?>
                 <option value="<?php echo $category['cat_id']; ?>"><?php echo $category['cat_name']; ?></option>
             <?php } ?>
@@ -51,5 +51,5 @@ if (isset($_post['add_post'])) {
     </div>
 
 
-    <input class="btn btn-danger form-control" type="submit" name="add_post" value="Add Posts">
+    <input class="btn btn-primary form-control" type="submit" name="add_post" value="Add Posts">
 </form>
