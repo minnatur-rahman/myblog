@@ -134,4 +134,17 @@ class myAdminBlog
                return $posts;
           }
      }
+     public function edit_img($data)
+     {
+          $id = $data['editImg_id'];
+          $imgName = $_FILES['change_img']['name'];
+          $tmp_name = $_FILES['change_img']['tmp_name'];
+
+          $query = "UPDATE posts SET post_img='$imgName' WHERE post_id=$id";
+
+          if (mysqli_query($this->conn, $query)) {
+               move_uploaded_file($tmp_name, '../upload/' . $imgName);
+               return "Image Updated Successfully!";
+          }
+     }
 }
