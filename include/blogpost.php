@@ -15,8 +15,8 @@ $posts = $obj->display_post_public();
                         </div>
                         <div class="down-content">
                             <span><?php echo $postData['cat_name']; ?></span>
-                            <a href="post-details.html">
-                                <h4>Best Template Website for HTML CSS</h4>
+                            <a href="single_post.php?view=postView&&id=<?php echo $postData['post_id']; ?>">
+                                <h4><?php echo $postData['post_title']; ?></h4>
                             </a>
                             <ul class="post-info">
                                 <li><a href="#"><?php echo $postData['post_author']; ?></a></li>
