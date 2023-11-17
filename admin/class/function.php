@@ -157,4 +157,16 @@ class myAdminBlog
                return $post;
           }
      }
+     public function update_post($data)
+     {
+          $post_title = $data['change_title'];
+          $post_content = $data['change_cont'];
+          $post_id = $data['edit_post_id'];
+
+          $query = "UPDATE posts SET post_title='$post_title', post_content='$post_content' WHERE post_id=$post_id";
+
+          if (mysqli_query($this->conn, $query)) {
+               return "Posts Updated Successfully!";
+          }
+     }
 }

@@ -4,11 +4,17 @@ if (isset($_GET['status'])) {
         $id = $_GET['id'];
         $postData = $obj->get_post_info($id);
     }
+    if (isset($_POST['update_post'])) {
+        $msg = $obj->update_post($_POST);
+    }
 }
 ?>
 
 
 <div class="shadow m-5 p-5">
+    <?php if (isset($msg)) {
+        echo $msg;
+    } ?>
     <form class="form" action="" method="post">
         <input name="edit_post_id" type="hidden" value="<?php echo $id; ?>">
         <div class="form-group">
