@@ -118,4 +118,12 @@ class myAdminBlog
                return "Post Add Successfully!";
           }
      }
+     public function display_post()
+     {
+          $query = "SELECT * FROM post_with_ctg";
+          if (mysqli_query($this->conn, $query)) {
+               $posts = mysqli_query($this->conn, $query);
+               return $posts;
+          }
+     }
 }
