@@ -25,7 +25,9 @@ $posts = $obj->display_post();
                     <td><?php echo $postData['post_id']; ?></td>
                     <td><?php echo $postData['post_title']; ?></td>
                     <td><?php echo $postData['post_content']; ?></td>
-                    <td><img height="100" src="../upload/<?php echo $postData['post_img']; ?>"></td>
+                    <td><img height="100" src="../upload/<?php echo $postData['post_img']; ?>"><br>
+                        <a href="edit_img.php?status=edit&&id=<?php echo $postData['post_id']; ?>">Change</a>
+                    </td>
                     <td><?php echo $postData['post_author']; ?></td>
                     <td><?php echo $postData['post_date']; ?></td>
                     <td><?php echo $postData['cat_name']; ?></td>
