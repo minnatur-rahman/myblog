@@ -14,7 +14,7 @@ $getCat = $obj->display_category();
 
     <?php include_once('include/preloader.php'); ?>
 
-    <?php include_once('include/header.php') ?>
+    <?php include_once('include/header.php'); ?>
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
