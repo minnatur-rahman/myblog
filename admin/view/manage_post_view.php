@@ -1,9 +1,17 @@
 <?php
 $posts = $obj->display_post();
 
+if(isset($_GET['status'])){
+    if($_GET['status']='deletepost'){
+        $id = $_GET['id'];
+         $delmsg = $obj->delete_post($id);
+    }
+}
+
 ?>
 
 <h1>Manage post page</h1>
+<?php if(isset $delmsg ){echo $delmsg ;} ?>
 <div class="table-responsive">
     <table class="table">
         <thead>
@@ -38,7 +46,7 @@ $posts = $obj->display_post();
                         } ?></td>
                     <td>
                         <a class="btn btn-danger" href="edit_post.php?status=editpost&&id=<?php echo $postData['post_id']; ?>">Edit</a>
-                        <a class="btn btn-warning" href="#">Delete</a>
+                        <a class="btn btn-warning" href="delete_post.php?status=deletepost&&id=<?php echo $postData['post_id']; ?>">Delete</a>
                     </td>
                 </tr>
             <?php } ?>
