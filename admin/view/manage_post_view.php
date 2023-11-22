@@ -1,17 +1,10 @@
 <?php
 $posts = $obj->display_post();
 
-if(isset($_GET['status'])){
-    if($_GET['status']='deletepost'){
-        $id = $_GET['id'];
-         $delmsg = $obj->delete_post($id);
-    }
-}
-
 ?>
 
 <h1>Manage post page</h1>
-<?php if(isset $delmsg ){echo $delmsg; } ?>
+
 <div class="table-responsive">
     <table class="table">
         <thead>
