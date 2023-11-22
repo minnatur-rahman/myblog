@@ -11,7 +11,7 @@ if(isset($_GET['status'])){
 ?>
 
 <h1>Manage post page</h1>
-<?php if(isset $delmsg ){echo $delmsg ;} ?>
+<?php if(isset $delmsg ){echo $delmsg; } ?>
 <div class="table-responsive">
     <table class="table">
         <thead>

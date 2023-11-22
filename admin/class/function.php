@@ -170,14 +170,14 @@ class myAdminBlog
           }
      }
      public function delete_post($id){
-          $catch_img = "SELECT * FROM posts WHERE post_id=$id";
+          $catch_img = "SELECT * FROM Views WHERE post_with_ctg=$id";
           $del_posts = mysqli_query($this->conn, $catch_img);
           $post_delete = mysqli_fetch_assoc($del_posts);
           $delete = $post_delete['post_img'];
-          $query = "SELECT * FROM posts WHERE post_id=$id";
+          $query = "SELECT * FROM Views WHERE post_with_ctg=$id";
           if(mysqli_query($this->conn, query)){
-               unlink('upload/'.$delete);
-               return "Post Delete Successfully!";
+               unlink('../upload/'.$delete);
+               return "Posts Delete Successfully!";
           }
      }
 }
